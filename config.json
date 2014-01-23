@@ -3,7 +3,7 @@
     "url": "http://ortense.github.io",
     "name": "ortense.github.io",
     "owner": "Marcus Ortense",
-    "description": "(function()).call(this)"
+    "description": "(function(){}).call(this)"
   },
   "plugins": [
     "./plugins/paginator.coffee"
