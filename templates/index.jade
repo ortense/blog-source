@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  include author
+  each article in articles
+    article.article.intro
+      header
+        p.date
+          span= moment.utc(article.date).format('DD-MM-YYYY')
+        h2
+          a(href=article.url)= article.title
+      section.content
+        a(href=article.url)
+          !{ typogr(article.intro).typogrify() } 
+        //- if article.hasMore
+          //-p.more
+          //-  a(href=article.url) Continue lendo...
+
+block prepend footer
+  div.nav
+    if prevPage
+      a(href=prevPage.url) « Mais Recentes
+    else
+      a(href='/archive.html') « Arquivo
+    if nextPage
+      a(href=nextPage.url) Próxima página »
+
+
+
