@@ -15,12 +15,12 @@ block header
     mixin author(page.metadata.author)
 
 block content
+  div.nav
+    a(href=contents.index.url) « Todos os posts
   article.article
     section.content!= typogr(page.html).typogrify()
 
 block prepend footer
-  include comments
   div.nav
     a(href=contents.index.url) « Todos os posts
-
-
+  include comments
